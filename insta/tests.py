@@ -7,7 +7,7 @@ class ProfileTestClass(TestCase):
     def setUp(self):
         self.user=User()
         self.user.save()
-        self.profile=Profile(user=self.user,username='kate',bio='',profile_pic='')
+        self.profile=Profile(user=self.user,username='kelvin',bio='',profile_pic='')
     def tearDown(self):
         Profile.objects.all().delete()
         User.objects.all().delete()
