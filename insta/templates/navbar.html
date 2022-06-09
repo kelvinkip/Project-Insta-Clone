@@ -1,0 +1,42 @@
+<div class="navigation">
+    <div class="logo">
+        <a class="no-underline" href="{% url 'index' %}">
+            Instagram
+        </a>
+    </div>
+    <div class="navigation-search-container">
+        <a href="{% url 'search_results' %}"><i class="fa fa-search"></i></a>
+        <input class="search-field" type="text" placeholder="Search">
+        <div class="search-container">
+            <div class="search-container-box">
+                <div class="search-results">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if user.is_authenticated %}
+    <div class="navigation-icons">
+        <a href="" target="_blank" class="navigation-link">
+            <i class="far fa-compass"></i>
+        </a>
+        <a class="navigation-link notifica">
+            <i class="far fa-heart">
+            </i>
+            <a class="navigation-link notifica" href="{% url 'addPost' %}" ><i class="fas fa-plus"></i></a>
+        </a>
+        <a href="{% url 'profile' %}" class="navigation-link">
+            <i class="far fa-user-circle"></i>
+        </a>
+        <a href="{% url 'logout' %}" id="signout" class="navigation-link">
+            <i class="fas fa-sign-out-alt"></i>
+        </a>
+        {% else %}
+        <a href="{% url 'login' %}" class="navigation-link" ><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+        
+        {% endif %}
+    </div>
+    
+</div>
+
+
