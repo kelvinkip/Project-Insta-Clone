@@ -228,8 +228,8 @@ WSGI_APPLICATION = 'instagram.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
-# DEBUG = config('DEBUG', default=False, cast=bool)
-DEBUG = os.environ.get('DEBUG', False)
+DEBUG = config('DEBUG', default=False, cast=bool)
+# DEBUG = os.environ.get('DEBUG', False)
 if config('MODE')=='dev':
     DATABASES = {
         'default': {
